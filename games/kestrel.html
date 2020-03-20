@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="canvas.css">
+</head>
+<body >
+  <div class="wrapper">
+      <div id="instructions">
+        <div>
+          move with <span class="key">arrows</span> 
+        </div>
+        <div>
+          shoot with <span class="key">space</span>
+        </div>
+      </div>
+</div>
+
+  <canvas id="canvas" width="1200" height="800"></canvas>
+<script>
+var demo =document.getElementById('canvas');
+var ctx = demo.getContext('2d');
+ctx.beginPath();
+  ctx.lineWidth = "0.5";
+  ctx.strokeStyle = "#CCFFFF";
+  ctx.rect(0, 0, 1200,170);
+  ctx.fillStyle = "#CCFFFF";
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+//cloud
+  ctx.beginPath();
+    ctx.lineWidth="40";
+    ctx.moveTo(0,130);
+    ctx.bezierCurveTo(0,150,50,170,100,250);
+    ctx.bezierCurveTo(100,250,150,190,200,250); 
+    ctx.bezierCurveTo(200,250,240,190,280,230);
+    ctx.bezierCurveTo(280,230,400,50,520,250);
+    ctx.bezierCurveTo(520,250,580,190,640,250);
+    ctx.bezierCurveTo(640,250,740,100,840,250);
+    ctx.bezierCurveTo(840,250,900,170,960,270);
+    ctx.bezierCurveTo(960,270,1020,200,1080,250);
+    ctx.bezierCurveTo(1080,250,1100,150,1200,150);
+    ctx.fillStyle="#CCFFFF";
+    ctx.strokeStyle="white";
+    ctx.fill();
+    ctx.stroke();
+
+//grass
+  ctx.beginPath();
+  ctx.rect(0, 630, 1200,20);
+  ctx.fillStyle = "#06D5CE";
+  ctx.strokeStyle="#06D5CE";
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+  //layer3
+    ctx.beginPath();
+    ctx.lineWidth = "0.5";
+  ctx.rect(0, 650, 1200,50);
+  ctx.fillStyle = "#048C80";
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+
+  //ground
+    ctx.beginPath();
+  ctx.lineWidth = "5";
+  ctx.strokeStyle="#906B3B";
+  //ctx.moveTo(0,750);
+    //ctx.bezierCurveTo(0,750,50,730,120,770);
+    //ctx.bezierCurveTo(120,770,140,760,200,700); 
+    //ctx.bezierCurveTo(200,700,240,140,280,180);
+    //ctx.bezierCurveTo(280,180,400,5,520,200);
+    //ctx.bezierCurveTo(520,200,580,140,640,200);
+    //ctx.bezierCurveTo(640,200,740,50,840,200);
+    ctx.stroke();
+  ctx.closePath();
+
+  // soil
+  ctx.beginPath();
+  ctx.lineWidth = "0.5";
+  ctx.strokeStyle="#9D8056";
+  ctx.rect(0, 700, 1200, 50);
+  ctx.fillStyle = "#9D8056";
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+
+  //mountain
+    ctx.beginPath();
+    ctx.lineWidth="1";
+    ctx.moveTo(0,500);
+    ctx.bezierCurveTo(0,500,100,460,200,500);
+    ctx.bezierCurveTo(200,500,400,350,600,500); 
+    ctx.bezierCurveTo(600,500,700,430,800,500);
+    ctx.bezierCurveTo(800,500,1000,380,1200,500);
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    //mountain
+    ctx.beginPath();
+    ctx.lineWidth="0.1";
+    ctx.strokeStyle="#BCD4E0";
+    ctx.rect(0, 500, 1200,130);
+    ctx.fillStyle = "#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+
+    //tree1
+    ctx.beginPath();
+    ctx.lineWidth="1";
+    //ctx.moveTo(90,420);
+    //ctx.bezierCurveTo(70,420,70,400,90,400);
+    //ctx.bezierCurveTo(80,380,80,360,100,380);
+    //ctx.bezierCurveTo(100,360,120,360,120,380);
+    //ctx.bezierCurveTo(140,370,140,400,120,400);
+    //ctx.bezierCurveTo(140,400,140,420,120,420);
+    ctx.fillStyle="#BCD4E0#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.rect(100,420,10,60);
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+
+    //tree2
+    ctx.beginPath();
+    ctx.lineTo(380, 390);
+    //**ctx.moveTo(0,500);
+    //ctx.bezierCurveTo(0,500,100,460,200,500);
+    //ctx.bezierCurveTo(200,500,400,350,600,500); 
+    //ctx.bezierCurveTo(600,500,700,430,800,500);
+    //ctx.bezierCurveTo(800,500,1000,380,1200,500);
+    ctx.strokeStyle="#BCD4E0";
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.rect(380,390,10,45);
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+
+  //tree3
+    ctx.beginPath();
+    //**ctx.moveTo(680, 400);
+    //ctx.bezierCurveTo(0,500,100,460,200,500);
+    //ctx.bezierCurveTo(200,500,400,350,600,500); 
+    //ctx.bezierCurveTo(600,500,700,430,800,500);
+    //ctx.bezierCurveTo(800,500,1000,380,1200,500);
+    ctx.strokeStyle="#BCD4E0";
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.rect(680, 400,10,70);
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+
+    //tree4
+    ctx.beginPath();
+    //ctx.moveTo(950,420);
+    //ctx.bezierCurveTo(950,420,930,400,940,390);
+    //ctx.bezierCurveTo(940,390,930,370,940,360); 
+    //ctx.bezierCurveTo(940,360,1000,350,1020,360);
+    //ctx.bezierCurveTo(1020,360,1030,370,1040,390);
+    //ctx.bezierCurveTo(1040,390,1050,400,950,420);
+    ctx.strokeStyle="#BCD4E0";
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.rect(980,400,10,50);
+    ctx.fillStyle="#BCD4E0";
+    ctx.fill();
+    ctx.stroke();
+  
+ //bush1
+  ctx.beginPath();
+  ctx.lineWidth="1";
+  ctx.strokeStyle="#048C80";
+  ctx.moveTo(100,630);
+    ctx.bezierCurveTo(100,630,90,610,120,620);
+    ctx.bezierCurveTo(120,620,130,600,140,610); 
+    ctx.bezierCurveTo(140,610,150,580,160,600); 
+    ctx.bezierCurveTo(160,600,180,560,200,610);
+    ctx.bezierCurveTo(200,610,210,580,220,610);
+    ctx.bezierCurveTo(220,590,240,560,260,600);
+    ctx.bezierCurveTo(260,600,280,590,290,610);
+    ctx.bezierCurveTo(290,610,320,590,310,630);
+    ctx.fillStyle="#048C80";
+    ctx.fill();
+    ctx.stroke();
+  ctx.closePath();
+
+  //bush2
+  ctx.beginPath();
+  ctx.lineWidth="1";
+  ctx.strokeStyle="#048C80";
+  ctx.moveTo(400,630);
+    ctx.bezierCurveTo(400,630,390,610,410,620);
+    ctx.bezierCurveTo(410,620,420,600,430,610); 
+    ctx.bezierCurveTo(430,610,440,590,450,610);
+    ctx.bezierCurveTo(440,610,470,580,480,610);
+    ctx.bezierCurveTo(480,610,490,605,500,615);
+    ctx.bezierCurveTo(500,615,510,580,530,620);
+    ctx.bezierCurveTo(530,620,540,610,550,630);
+    ctx.fillStyle="#048C80";
+    ctx.fill();
+    ctx.stroke();
+  ctx.closePath();
+
+
+  //bush3
+  ctx.beginPath();
+  ctx.lineWidth="1";
+  ctx.strokeStyle="#048C80";
+  ctx.moveTo(700,630);
+    ctx.bezierCurveTo(700,630,709,600,720,620);
+    ctx.bezierCurveTo(720,620,728,590,738,610); 
+    ctx.bezierCurveTo(738,610,746,600,752,610);
+    ctx.bezierCurveTo(752,610,760,590,775,600);
+    ctx.bezierCurveTo(775,600,795,570,815,615);
+    ctx.bezierCurveTo(815,615,825,610,835,620);
+    ctx.bezierCurveTo(835,620,845,610,855,630);
+    ctx.fillStyle="#048C80";
+    ctx.fill();
+    ctx.stroke();
+  ctx.closePath();
+
+  //bush4
+  ctx.beginPath();
+  ctx.lineWidth="1";
+  ctx.strokeStyle="#048C80";
+  ctx.moveTo(1000,630);
+    ctx.bezierCurveTo(1000,630,1010,610,1020,620);
+    ctx.bezierCurveTo(1020,620,1030,590,1040,610); 
+    ctx.bezierCurveTo(1040,610,1050,590,1060,600);
+    ctx.bezierCurveTo(1060,600,1080,580,1100,610);
+    ctx.bezierCurveTo(1100,610,1110,590,1120,620);
+    ctx.bezierCurveTo(1120,620,1140,560,1160,620);
+    ctx.bezierCurveTo(1160,620,1170,590,1180,615);
+    ctx.bezierCurveTo(1180,615,1190,590,1200,630);
+    ctx.fillStyle="#048C80";
+    ctx.fill();
+    ctx.stroke();
+  ctx.closePath();
+    </script>
+</body>
+</html>
